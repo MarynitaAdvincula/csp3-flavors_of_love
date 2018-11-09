@@ -22,7 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ asset('css/blog.css') }}" />
-    <link rel="stylesheet" href="https://www.tinymce.com/css/codepen.min.css" />
+    {{-- <link rel="stylesheet" href="https://www.tinymce.com/css/codepen.min.css" /> --}}
     <script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=x6qudqbeuhp9vron0c7hsuvrjnhv6wraki9cgx5nxs32mpy2"></script>
 
     @yield('stylesheet')
@@ -31,46 +31,37 @@
 
 <body>
 
-<header id="header" class="header-section">
-    <div class="header-top" >
-        <div class="container">
-            <div class="header-social">
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-twitter-square"></i></a>
-            </div>
-            <div class="user-panel">
-                <a href="#">Join Us</a> 
-            </div>
-        </div>
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container"> 
+      <!-- Brand and toggle -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+    </button>
+      <a class="navbar-brand" href="#"><strong>Flavors of Love</strong></a> 
     </div>
+    
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/recipes">Recipes</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="text-center" name="home">
+  <div class="intro-text">
+    <h1>Welcome to <strong>Flavors of Love</strong></h1>
+    <p>Expressing our passion for food and travel</p>
+    <a href="/features" class="btn btn-default btn-lg">LEARN MORE</a> 
+  </div>
 </header>
 
-<div class="header-bottom">
-    <div class="container">
-        
-        @if(\Request::is('/'))
-            
-        <div class="logo-header">
-            <a href="index.html" class="site-logo"><img src="img/logo.png" alt=""></a>
-        </div>
-        @endif
-        <div class="nav-switch">
-            <i class="fa fa-bars"></i>
-        </div>
-        <div class="header-search">
-            <a href="#"><i class="fa fa-search"></i></a>
-            <input type="text" name="search_site" placeholder="Search Site">
-        </div>
-        
-        <div>
-            <ul class="main-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/features">Features</a></li>
-                <li><a href="/recipes">Recipes</a></li>
-                <li><a href="/reviews">Reviews</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>    
-        </div>
-    </div>
-</div>
+<hr>

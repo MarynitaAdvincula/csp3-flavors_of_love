@@ -44,9 +44,5 @@
             </ol>        
         </div>
     </div>
-
-    
-
-    
-
+        
 </div><!-- /.blog-sidebar -->

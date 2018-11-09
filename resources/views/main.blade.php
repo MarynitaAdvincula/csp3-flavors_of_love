@@ -3,4 +3,3 @@
     @yield('content')
 </div><!-- /.container -->
 
-@include('partials._footer')
