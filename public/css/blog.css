@@ -124,11 +124,10 @@ hr {
 
 /* Home Style */
 header {
-	background: url(/img/party.jpeg) no-repeat center;
+	background: url(/img/food.jpg) no-repeat center;
 	background-size: cover;
 	color: #cfcfcf;
 	position: relative;
-
 }
 
 header p {
@@ -170,6 +169,23 @@ h2.blog-post-title{
 	margin-top: 25px;
 }
 
+#homecontact{
+	margin-top: 35px;
+	margin-bottom:35px;
+	padding: 5%;
+	background-color: #ddf6fd;
+}
+
+#emailindex{
+	width: 60%;
+	margin-right: 10px;
+}
+
+#pager1{
+	background-color: #f7b733;
+	
+
+}
 
 /*Footer*/
 /* Social Section */

@@ -15,27 +15,42 @@
             <p class="blog-post-meta"> {{ $ph->created_at }} by {{ $ph->last_name }}, {{ $ph->first_name }} </p>
 
             <p> {!! $ph->post_content !!} </p>
-            @endforeach
-        </div> 
-    </div> 
-
-    <nav>
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-            <li><a href="/new_post">New Post</a></li>
-        </ul>
-    </nav>
-    <div class="card text-center">
-        <div class="card-header">Welcome to our website and Join Us!</div>
-        <div class="card-body">
-            <h4 class="card-title">Email us</h4>
-            <input type="email" class="form-control" placeholder="Enter your Email Address">
-            
-            <div><a href="/contact" class="btn btn-primary">Sign Up Now</a></div> 
+            @endforeach 
         </div> 
     </div>
+</div>     
+<hr>
+
+<nav>
+    <ul class="pager">
+        <li><a id="pager1" href="#">Previous</a></li>
+        <li><a id="pager1" href="#">Next</a></li>
+        <li><a id="pager1" href="/new_post">New Post</a></li>
+    </ul>
+</nav>
+
+<hr>
+
+<div class="row" id="homecontact">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Join Us!</h5>
+                <p class="card-text">For more exclusive tips, giveaways, news, resources and more.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Email Address</h5>
+                <input type="email" name="email" id="emailindex" placeholder="Email Address">
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </div>
 </div>
+
 </div>
 
 <!--Footer-->
