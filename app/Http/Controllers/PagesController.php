@@ -18,6 +18,7 @@ class PagesController extends Controller
 		
 		$post_home = Post::join('users','posts.author_ID','users.id')->whereCategory_idAndPost_type('1','1')->get();
 		$pages_home = Post::whereCategory_idAndPost_type('1','2')->get();
+        
 		return view('pages.index',compact('pages_home','post_home'));
 	}
 
@@ -25,7 +26,10 @@ class PagesController extends Controller
 	* Show case page
 	*/
 	public function getFeatures() {
-		return view('pages.features');
+		
+
+
+        return view('pages.features');
 	}
 
 	/**

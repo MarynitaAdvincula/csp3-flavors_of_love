@@ -31,7 +31,58 @@
 
 <body>
 
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+
+<header role="banner">
+    <nav class="navbar navbar-expand-md navbar-light bg-white absolute-top">
+      <div class="container">
+
+        <button class="navbar-toggler order-2 order-md-1" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-3 order-md-2" id="navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/features" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                <a class="dropdown-item" href="#">Restaurants Reviews</a>
+                <a class="dropdown-item" href="#">Travel Destinations</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/reviews" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reviews</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown03">
+                <a class="dropdown-item" href="#">Restaurant Reviews</a>
+                <a class="dropdown-item" href="#">Travel Destinations</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto order-1 order-md-3" href="/">Flavors of Love</a>
+
+        <div class="collapse navbar-collapse order-4 order-md-4" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+          <form class="form-inline" role="search">
+            <input class="search js-search form-control form-control-rounded mr-sm-2" type="text" title="Enter search query here.." placeholder="Search.." aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+{{-- <nav id="menu" class="navbar navbar-default navbar-fixed-top">
   <div class="container"> 
       <!-- Brand and toggle -->
     <div class="navbar-header">
@@ -53,7 +104,7 @@
         </ul>
       </div>
   </div>
-</nav>
+</nav> --}}
 
 <!-- Header -->
 <header class="text-center" name="home">
@@ -64,4 +115,4 @@
   </div>
 </header>
 
-<hr>
+

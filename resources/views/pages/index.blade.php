@@ -4,21 +4,33 @@
 
 @section('content')
 
-<div class="row">
-    <div class="col blog-main"> 
-        <div class="blog-post">
+<main class="indexbody pt-4" role="main">
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-12">
+                <div class="article card mb-5">
 
-            @foreach($post_home as $ph)
+                    @foreach($post_home as $ph)
 
-            <h2 class="blog-post-title">{{ $ph->post_title }}</h2>
+                    <h2 class="blog-post-title">{{ $ph->post_title }}</h2>
 
-            <p class="blog-post-meta"> {{ $ph->created_at }} by {{ $ph->last_name }}, {{ $ph->first_name }} </p>
+                    <p class="blog-post-meta"> {{ $ph->created_at }} by {{ $ph->last_name }}, 
+                    {{ $ph->first_name }} </p>
 
-            <p> {!! $ph->post_content !!} </p>
-            @endforeach 
-        </div> 
-    </div>
-</div>     
+                    <p> {!! $ph->post_content !!} </p>
+
+                    <div id="buttonReadMore">
+                        <button onclick="myFunction()" id="myBtn">Read More</button>    
+                    </div>    
+                    
+                    @endforeach 
+
+                </div> 
+            </div>     
+        </div>
+    </div>     
+</main>
+
 <hr>
 
 <nav>
@@ -52,6 +64,8 @@
 </div>
 
 </div>
+
+
 
 <!--Footer-->
 @include('partials._footer') 

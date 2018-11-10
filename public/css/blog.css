@@ -183,9 +183,21 @@ h2.blog-post-title{
 
 #pager1{
 	background-color: #f7b733;
-	
+	padding: 15px;
+	width: 10%;
 
 }
+
+/* Features*/
+#featuresheader{
+	margin-top: 10%;
+}
+
+div.blog-content{
+	margin-top: 10px;
+}
+
+
 
 /*Footer*/
 /* Social Section */
