@@ -1,5 +1,12 @@
 /*
  *
+ * Tablet Devices
+ *
+ */
+
+ @media only screen and (max-width: 960px) and (min-width:401px){
+/*
+ *
  * CSS Reset
  *
  */
@@ -16,7 +23,7 @@
  */
 
 body, html {
-	/*font-family: 'Lato', sans-serif;*/
+	font-family: 'Lato', sans-serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	color: #777;
@@ -26,12 +33,12 @@ body, html {
 h1 {
 }
 h1 strong {
-	font-weight: 500;
+	font-weight: 700;
 }
 h2 {
 	line-height: 20px;
-	font-size: 30px;
-	font-weight: 500;
+	font-size: 32px;
+	font-weight: 700;
 	margin: 0;
 	color: #555;
 }
@@ -95,7 +102,7 @@ hr {
 /* Navigation */
 #menunavbar {
 	padding: 20px;
-	transition: all 0.12s;
+	transition: all 0.8s;
 }
 
 #menunavbar{
@@ -119,26 +126,25 @@ hr {
 	font-size: 12px;
 	letter-spacing: 1px;
 }
-
 #menunavbar.nav-link .navbar-nav > li > a:hover {
 	color: #0dad8d;
 }
-/*.on {
+.on {
 	background-color: #222222 !important;
 	padding: 0 !important;
-}*/
+}
 .menunavbar .navbar-nav > .active > a, .nav-link .navbar-nav > .active > a:hover, .menunavbar .navbar-nav > .active > a:focus {
 	color: #0dad8d !important;
 	background-color: transparent;
 }
-.navbar-toggle {
+.navbar-toggler {
 	border-radius: 0;
 }
-.nav-link .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+.nav-link .navbar-toggler:hover, .navbar-default .navbar-toggler:focus {
 	background-color: #0dad8d;
 	border-color: #0dad8d;
 }
-.navbar-default .navbar-toggle:hover>.icon-bar {
+.navbar-default .navbar-toggler:hover>.icon-bar {
 	background-color: #FFF;
 }
 
@@ -185,6 +191,9 @@ header p {
 	border-color: #fff;
 }
 
+h2.blog-post-title{
+	margin-top: 25px;
+}
 
 #homecontact{
 	margin-top: 35px;
@@ -218,7 +227,6 @@ ul.pager{
 #buttonReadMore{
 	margin: 20px;
 }
-.more {display: none;}
 
 p.blogpostcontent{
 	padding-left:  20%;
@@ -249,9 +257,6 @@ div.blog-content{
 }
 
 
-h2.blog-post-title{
-	margin-top: 25px;
-}
 
 /*Footer*/
 /* Social Section */
@@ -388,7 +393,7 @@ footer.blog-footer{
 .div.logo-header{
 	text-align: center;
 	height: 30vh;
-	width: 80vw;*/
+	width: 80vw;*/*/
 	/*background-color: #ff2a6b;*/
 	/*background-image: url('/img/header.jpg');
 	background-repeat: no-repeat;
@@ -459,3 +464,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+ }

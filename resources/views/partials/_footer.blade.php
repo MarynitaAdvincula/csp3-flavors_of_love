@@ -1,3 +1,4 @@
+</div>
 	<footer class="blog-footer">
 		<div id="social-section">
 			<div class="container">

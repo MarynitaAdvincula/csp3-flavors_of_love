@@ -19,3 +19,6 @@ Route::get('/new_post', 'PagesController@getNewPost');
 Route::post('/new_post', 'PagesController@postNewPost');
 Route::get('/edit_post/{id}', 'PagesController@getEditPost');
 Auth::routes();
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
