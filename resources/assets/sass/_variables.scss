@@ -1,38 +1,33 @@
+//Colors
+$purple-dark4: #4a148c;
+$purple-light4: #e1bee7;
+$green-light4: #e8f5e9;
+$green-light3: #a5d6a7;
+$green-dark1: #43a047;
+$blue-light4: #bbdefb;
+$orange-light4: #ffe0b2;
+$grey: #777;
+$grey-dark7: #333;
+$red-dark1: #e53935;
+$yellow-dark3: #f9a825;
+$pink-light4: #f8bbd0;
+$pink-dark4: #880e4f;
+$red-light4: #ffcdd2;
 
-// Body
-$body-bg: #f5f8fa;
+//Font sizes
+$font-sm: 0.7em;
+$font-normal:1em;
+$font-md: 1.3em;
+$font-lg: 2em;
+$font-xlg: 3.5em;
+$font-xxlg: 5em;
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+$text-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
-
-// Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
-
-// Navbar
-$navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
+//Navbar
+$navbar-default-bg: $green-light4;
 
 // Panels
-$panel-default-heading-bg: #fff;
+$panel-default-heading-bg: $green-light4;
+
+$footer-height: 10vh;

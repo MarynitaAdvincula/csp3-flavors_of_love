@@ -14,7 +14,7 @@ return [
     */
 
     'paths' => [
-        resource_path('views'),
+        realpath(base_path('resources/views')),
     ],
 
     /*
@@ -29,5 +29,8 @@ return [
     */
 
     'compiled' => realpath(storage_path('framework/views')),
+
+
+    'item_per_page' => 15,
 
 ];
