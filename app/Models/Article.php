@@ -96,14 +96,14 @@ class Article extends Model
             if (is_null($category)) {
                 return collect([]);
             }
-            $articleQuery = Article::where('category_id', $category->id);
+            $articleQuery = Article::where('category_id', $category->id)->notDeleted();
         } elseif (!is_null($keywordName)) {
             $keyword = Keyword::where('name', $keywordName)->first();
             if (is_null($keyword)) {
                 return collect([]);
             }
             $articleIds = $keyword->articles->pluck('id')->toArray();
-            $articleQuery = Article::whereIn('id', $articleIds);
+            $articleQuery = Article::whereIn('id', $articleIds)->notDeleted();
         } else {
             $articleQuery = Article::published()->notDeleted();
         }

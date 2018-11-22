@@ -9,7 +9,7 @@
 |
 */
 //Home
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('', 'HomeController@index')->name('home');
 
 //Subscribe
 Route::post('subscribe', 'UserController@subscribe')->name('subscribe');

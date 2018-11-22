@@ -33,7 +33,7 @@
                             <td>{{$keyword->createdAtHuman}}</td>
                             <td>{{$keyword->articles->count()}}</td>
                             <td class="text-center">
-                                <span class="fa fa-edit text-primary pointer" v-on:click="showKeywordForm({{$keyword}})" onclick="showKeywordForm({{$keyword}})"></span>&nbsp;
+                                <span class="fa fa-edit text-primary pointer" v-on:click="showKeywordForm({{$keyword}})"></span>&nbsp;
                                 <a href="{{route('toggle-keyword-active', $keyword->id)}}">
                                     <span class="fa fa-lg {{$keyword->is_active ? 'fa-toggle-on text-success' : 'fa-toggle-off text-grey'}}"></span>
                                 </a>
@@ -44,7 +44,7 @@
                         </tr>
                     @endforeach
                 </table>
-            </form
+            </form>
             <!-- Modal -->
             <div class="modal fade" id="keyword-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -89,11 +89,5 @@
                 }
             }
         });
-
-    function showKeywordForm(keyword){
-        $("#name").val(keyword.name);
-        $("#keyword-form").attr("action", "keyword/" + keyword.id);
-        $("#keyword-modal").modal("show");
-    }
     </script>
 @endsection

@@ -5,6 +5,10 @@
                    placeholder="*Heading..." required>
         </div>
         <div class="form-group">
+           <input type="file" id="featImg" v-on:change="onFeatureChg" class="form-control" accept="image/*" >
+           <img id="preView" src="">
+        </div>
+        <div class="form-group">
             <select class="form-control" name="category_id" v-model="article_data.category_id">
                 <option :value="category.id" v-for="category in categories">
                     {{category.name}}
@@ -31,8 +35,8 @@
             <div v-for="language in languages">
                 <input :id="'radio-'+language.key" type="radio" name="language"
                        v-model="article_data.language"
-                       :value="language.key">
-                <label :for="'radio-'+language.key">{{language.value}}</label>
+                       :value="language.key" style="display:none;">
+                <!-- <label :for="'radio-'+language.key">{{language.value}}</label> -->
             </div>
         </div>
         <div class="form-group">
@@ -49,9 +53,11 @@
 </template>
 
 <script>
+    const reader = new FileReader;
     import markdownEditor from 'vue-simplemde/src/markdown-editor';
     import * as Ladda from 'ladda';
     import {alertError} from "@/script";
+    let imgString = '';
 
     export default {
         name: "ArticleForm",
@@ -72,8 +78,9 @@
                         category_id: 1,
                         content: '',
                         keywords: '',
-                        language: 'ben',
+                        language: 'eng',
                         is_comment_enabled: true,
+                        featureImage : '',
                     }
                 }
             }
@@ -87,6 +94,8 @@
             storeArticle() {
                 let l = Ladda.create(document.querySelector('#submit-btn'));
                 l.start();
+                
+                Vue.set(this.article_data,"featureImage",imgString);
 
                 axios.request({
                     method: this.method,
@@ -101,9 +110,24 @@
                     l.stop();
                     alertError(error.response.data.errorMsg);
                 })
+            },
+            onFeatureChg(){
+               let input = document.getElementById('featImg');
+               /*reader.abort();*/
+               reader.readAsDataURL(input.files[0]);
+               
             }
         }
     }
+    reader.onload = () => {
+    let hiddenField = document.getElementById('featureImg');
+    const dataURL = reader.result;
+    const base64 = reader.result.split(",").pop();
+    console.log(dataURL, base64);
+    imgString = dataURL;
+    let preView = document.getElementById('preView');
+    preView.src = imgString;
+  }
 </script>
 
 <style scoped>

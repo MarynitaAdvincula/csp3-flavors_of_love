@@ -41,7 +41,7 @@
                             </td>
                             <td class="text-center">
                         <span class="fa fa-edit text-primary pointer"
-                              v-on:click="showCategoryForm({{$category}})"></span>&nbsp;
+                              v-on:click="showCategoryForm({{$category}})" onclick="showCategoryForm({{$category}})"></span>&nbsp;
                                 <a href="{{route('toggle-category-active', $category->id)}}">
                                     <span class="fa fa-lg {{$category->is_active ? 'fa-toggle-on text-success' : 'fa-toggle-off text-grey'}}"></span>
                                 </a>
@@ -102,5 +102,13 @@
                 }
             }
         });
+
+    function showCategoryForm(category){
+        $("#name").val(category.name);
+        $("#alias").val(category.alias);
+        $("#category-form").attr("action", "category/" + category.id);
+        $("#category-modal").modal("show");
+    }
+
     </script>
 @endsection

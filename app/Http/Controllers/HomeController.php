@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +16,8 @@ class HomeController extends Controller
             return $dashboard->index();
         } else {
             $articles = Article::getPaginate($request);
-            return view('frontend.articles', compact('articles'));
+            $categories = Category::where('is_active',1)->get();
+            return view('frontend.articles', compact('articles','categories'));
         }
     }
 }

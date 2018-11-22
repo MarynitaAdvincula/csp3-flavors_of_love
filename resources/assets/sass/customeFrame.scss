@@ -30,8 +30,10 @@ a:hover{
 }
 
 .navbar-brand {
-  color: $purple-dark4 !important;
+  //color: $purple-dark4 !important;
+  color: $white !important;
 }
+
 
 .main-container {
   min-height: 100vh-$footer-height;
@@ -40,13 +42,15 @@ a:hover{
 
 footer{
   height: $footer-height;
-  background: $green-light4;
+  //background: $green-light4;
+  background: $yellow-dark3;
   padding-top: 20px;
   font-size: 15px;
 }
 
 .sidebar-container{
-  background: $green-light4;
+  //background: $green-light4;
+  background: $yellow-dark3;
   min-height: inherit;
   .sidebar{
     width: 100%;
@@ -61,30 +65,30 @@ footer{
 
 //borders
 .border-bottom{
-  border-bottom: 1px solid $green-light3;
+  border-bottom: 1px solid $blue-light4;
 }
 
 .border-top{
-  border-top: 1px solid $green-light3;
+  border-top: 1px solid $yellow-dark3;
 }
 
 .border-left{
-  border-left: 1px solid $green-light3;
+  border-left: 1px solid $yellow-dark3;
 }
 
 .border-right{
-  border-right: 1px solid $green-light3;
+  border-right: 1px solid $yellow-dark3;
 }
 
 .border-all{
-  border: 1px solid $green-light3;
+  border: 1px solid $yellow-dark3;
 }
 
 hr{
   margin-top: 0;
   margin-bottom: 0;
   border: 0;
-  border-top: 1px solid $green-light3;
+  border-top: 1px solid $yellow-dark3;
 }
 
 //margins

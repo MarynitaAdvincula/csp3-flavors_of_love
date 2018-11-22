@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-1 col-sm-offset-5 text-center">
            
-                <a href="{{route('login-form')}}" class="text-grey"><i class="fas fa-user-plus"></i> Sign-Up</a>
+                <a href="{{route('login-form')}}" class="text-grey"><i class="fas fa-user-plus"></i> Sign In</a>
             </div>
         @endif
     </div>

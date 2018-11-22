@@ -59,8 +59,9 @@ class CategoryController extends Controller
     public function getArticles(Request $request, $categoryAlias)
     {
         $articles = Article::getPaginate($request);
+        $categories = Category::where('is_active',1)->get();
 
-        return view('frontend.articles', compact('articles'));
+        return view('frontend.articles', compact('articles','categories'));
     }
 
     public function destroy($categoryId)

@@ -9,15 +9,20 @@
 			<a href="/" class="site-logo">
 				<img src="/img/logo.png" alt="">
 			</a>
-			<ul class="main-menu">
-				<li><a href="/">Home</a></li>
-				<li><a href="/category/article/features">Features</a></li>
+		 	<ul class="main-menu"> 
+				{{-- <li><a href="/">Articles</a></li> --}}
+				{{-- <li><a href="/category/article/features">Features</a></li>
 				<li><a href="/category/article/recipes">Recipes</a></li>
 				<li><a href="/category/article/reviews">Reviews</a></li>
-				<li><a href="/contact.html">Contact</a></li>
+				<li><a href="/contact.html">Contact</a></li> --}}
+
+				@forelse($categories as $category)   
+				<li><a href="/category/article/{{$category->alias}}">{{$category->name}}</a></li>
+				@endforeach
 			</ul>
 		</div>
 	</div>
+	<div class="mb-5">&nbsp;</div>
 @if(Route::current()->getName() == 'home')
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">

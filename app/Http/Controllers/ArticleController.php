@@ -9,18 +9,21 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Keyword;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
+
 class ArticleController extends Controller
 {
     public function index(Request $request)
     {
         $articles = Article::getPaginate($request);
-        return view('frontend.articles', compact('articles'));
+        $categories = Category::where('is_active',1)->get();
+        return view('frontend.articles', compact('articles','categories'));
     }
 
     public function show($articleId, $articleHeading = '')
@@ -58,8 +61,9 @@ class ArticleController extends Controller
                 || $article->user->id == auth()->user()->id);
 
         $relatedArticles = $this->getRelatedArticles($article);
+        $categories = Category::where('is_active',1)->get();
 
-        return view('frontend.article', compact('article', 'relatedArticles'));
+        return view('frontend.article', compact('article', 'relatedArticles','categories'));
     }
 
     private function getRelatedArticles(Article $article)
@@ -107,6 +111,16 @@ class ArticleController extends Controller
         $keywordsToAttach = array_unique(explode(' ', $request->get('keywords')));
         try {
             $article->update($updatedArticle);
+            //remove all images then add all images from input
+            $article->images()->detach();
+             //new feature image
+            $newImage = Image::create([
+                            'src' => $request->get('featureImage'),
+                            'caption' => 'none',
+                        ]);
+            //reattach new image
+            $article->images()->attach($newImage);
+
             //remove all keywords then add all keywords from input
             $article->keywords()->detach();
             foreach ($keywordsToAttach as $keywordToAttach) {
@@ -137,6 +151,13 @@ class ArticleController extends Controller
         $newAddress = ['ip' => $clientIP];
 
         try {
+            //new feature image
+            $newImage = Image::create([
+                            'src' => $request->get('featureImage'),
+                            'caption' => 'none',
+                        ]);
+
+
             //Create new address
             $newAddress = Address::create($newAddress);
             //Create new article
@@ -144,6 +165,7 @@ class ArticleController extends Controller
             $newArticle['published_at'] = new \DateTime();
             $newArticle['user_id'] = Auth::user()->id;
             $newArticle = Article::create($newArticle);
+            $newArticle->images()->attach($newImage);
             //add keywords
             $keywordsToAttach = array_unique(explode(' ', $request->get('keywords')));
             foreach ($keywordsToAttach as $keywordToAttach) {
@@ -206,7 +228,8 @@ class ArticleController extends Controller
         $searched = new \stdClass();
         $searched->articles = $articles;
         $searched->query = $queryString;
-        return view('frontend.search_result', compact('searched'));
+        $categories = Category::where('is_active',1)->get();
+        return view('frontend.search_result', compact('searched','categories'));
     }
 
     public function adminArticle()

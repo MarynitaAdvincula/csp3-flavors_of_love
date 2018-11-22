@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\KeywordRequest;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Keyword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -67,7 +68,8 @@ class KeywordController extends Controller
     public function getArticles(Request $request, $keywordName)
     {
         $articles = Article::getPaginate($request);
+        $categories = Category::where('is_active',1)->get();
 
-        return view('frontend.articles', compact('articles'));
+        return view('frontend.articles', compact('articles','categories'));
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Created by al_imran on 11/25/16.
+ * Created by Mary Advincula on 11/15/2018.
  */
 (function ($) {
     $(document).ready(function () {

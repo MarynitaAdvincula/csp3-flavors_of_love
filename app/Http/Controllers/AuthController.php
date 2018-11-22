@@ -30,6 +30,7 @@ class AuthController extends Controller
         $remember = $request->has('remember_me');
 
         if (Auth::attempt($credentials, $remember)) {
+            if (Auth::user()->hasRole(['reader'])) return redirect()->route('home');
             return redirect()->route('admin-dashboard');
         }
 

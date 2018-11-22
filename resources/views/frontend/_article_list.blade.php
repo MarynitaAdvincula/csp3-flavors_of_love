@@ -1,9 +1,16 @@
  <div class="index-content">
     <div class="container">
+                {{-- <h3 class="text-center">Blogs</h3> --}}
+                <h3>&nbsp;</h3>
  @forelse($articles as $article)    
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="card">
-                    <img src="/img/1.jpg">
+
+                    <!-- <img class="img-responsive" src="/img/1.jpg"> -->
+                    @foreach($article->images as $image)
+                     <img class="img-responsive" src="{{$image->src}}" style="width: 100%; height: 100%;">
+                     @break
+                    @endforeach
                     <a href="{{route('get-article', [$article->id, make_slug($article->heading)])}}">
                         <h4 class="heading">{{ substr($article->heading,0,30) }}...</h4>
                     </a>
@@ -28,6 +35,7 @@
                 </div>
                 &nbsp; 
             </div>
+     
     @empty
     <div class="row text-grey">
         <div class="col-sm-12"><h3>Not Available</h3></div>
