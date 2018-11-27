@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="col-sm-offset-2 col-sm-6 margin-top-15">
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading text-center">
                 <strong>Welcome</strong>
             </div>
@@ -24,7 +24,7 @@
                             <input type="checkbox" name="remember_me"> Remember Me
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success pull-right">Login</button>
+                    <button type="submit" class="btn btn-primary pull-right">Login</button>
                 </form>
             </div>
         </div>

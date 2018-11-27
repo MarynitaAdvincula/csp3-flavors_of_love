@@ -1,9 +1,8 @@
-@extends('layouts.public')
+@extends('layouts.home')
 @section('content')
     <div id="article">
-
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col text-center">
                 <h1 class="article-heading text-xlg no-margin-bottom">{{$article->heading}}</h1>
                 <div class="margin-bottom-10">
                     <span class="text-grey">Written {{$article->createdAtHuman}}</span>
@@ -13,10 +12,14 @@
                         <a href="{{route('edit-article', $article->id)}}"><span class="fa fa-edit"></span></a>
                     @endif
                 </div>
+                @foreach($article->images as $image)
+                     <img class="img-fluid" src="{{$image->src}}" >
+                     @break
+                    @endforeach
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 text-justify text-md">{!! $article->contentAsHtml !!}</div>
+            <div class="col text-justify text-md">{!! $article->contentAsHtml !!}</div>
         </div>
         <hr class="margin-bottom-10 margin-top-10">
         <div class="row">
@@ -32,28 +35,30 @@
         <hr class="margin-bottom-10 margin-top-10">
         @if(!$relatedArticles->isEmpty())
             <div class="row">
-                <div class="col-sm-12 text-lg">
-                    <strong>More Articles on
+                <div class="col text-lg">
+                    <strong class="margin-left-15"> More Articles on
                         <a href="{{route('articles-by-category', ['categoryAlias' => $article->category->alias])}}">{{$article->category->name}}</a>
                     </strong>
                 </div>
             </div>
-            <hr>
+           <hr class="margin-bottom-15 margin-top-10">
             <div class="row">
-                <div class="col-sm-12" id="related-articles">
+                <div class="col-sm-12 text-center" id="related-articles">
                     @include('frontend._article_list', ['articles' => $relatedArticles])
                 </div>
             </div>
         @endif
 
+        <hr class="margin-bottom-15 margin-top-10">
+
         @if($article->is_comment_enabled)
 
-            <div class="row margin-top-15" id="comment-form">
+            <div class="row margin-top-15 text-center" id="comment-form">
                 <comment-form :add_comment_url="'{{route('add-comment', $article->id)}}'"></comment-form>
             </div>
 
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col">
                     <strong class="text-lg">Comments({{count($article->comments)}})</strong>
                     <span class="fa fa-3x fa-commenting-o text-primary pointer" id="comment-btn"
                           title="Post a comment"></span>

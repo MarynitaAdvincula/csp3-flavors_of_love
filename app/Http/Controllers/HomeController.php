@@ -17,7 +17,7 @@ class HomeController extends Controller
         } else {
             $articles = Article::getPaginate($request);
             $categories = Category::where('is_active',1)->get();
-            return view('frontend.articles', compact('articles','categories'));
+            return view('frontend.articles_h', compact('articles','categories'));
         }
     }
 }

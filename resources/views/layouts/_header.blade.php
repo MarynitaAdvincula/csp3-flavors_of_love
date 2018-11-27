@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en"  xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,8 @@
 	<!-- CSS -->
 	<link href="{{ mix("build/css/app.css") }}" rel="stylesheet" type="text/css">
 	<link href="{{ "/build/css/style.css" }}" rel="stylesheet" type="text/css">
+	{{-- <link href="{{ "/build/css/footer.css" }}" rel="stylesheet" type="text/css">  --}}
+
 </head>
 <body>
 	<div id="l5_blog">

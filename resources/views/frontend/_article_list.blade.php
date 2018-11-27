@@ -3,7 +3,7 @@
                 {{-- <h3 class="text-center">Blogs</h3> --}}
                 <h3>&nbsp;</h3>
  @forelse($articles as $article)    
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card">
 
                     <!-- <img class="img-responsive" src="/img/1.jpg"> -->
@@ -12,9 +12,9 @@
                      @break
                     @endforeach
                     <a href="{{route('get-article', [$article->id, make_slug($article->heading)])}}">
-                        <h4 class="heading">{{ substr($article->heading,0,30) }}...</h4>
+                        <h4 class="heading">{{ substr($article->heading,0,24) }}...</h4>
                     </a>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         @foreach($article->keywords as $keyword)
                         <a href="{{route('articles-by-keyword', [$keyword->name])}}">
                             <span class="label label-info">{{$keyword->name}}</span>
@@ -30,13 +30,16 @@
                             ({{$article->hit_count}} {{$article->hit_count > 1 ? 'reads' : 'read'}})
                         </span>
                     </div> --}}
-                    <a href="{{route('get-article', [$article->id, make_slug($article->heading)])}}" class="blue-button">Read More</a>
 
+                    <a href="{{route('get-article', [$article->id, make_slug($article->heading)])}}" class="blue-button">Read More</a>
+                    
                 </div>
                 &nbsp; 
             </div>
      
     @empty
+
+    
     <div class="row text-grey">
         <div class="col-sm-12"><h3>Not Available</h3></div>
     </div>
@@ -44,3 +47,5 @@
             </div>
     </div>
     {{method_exists($articles, 'links') ? $articles->links() : ''}}
+
+   

@@ -9,19 +9,18 @@
 			<a href="/" class="site-logo">
 				<img src="/img/logo.png" alt="">
 			</a>
-			<ul class="main-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">Features</a></li>
-				<li><a href="recipes.html">Recipes</a></li>
-				<li><a href="#">Reviews</a></li>
-				<li><a href="contact.html">Contact</a></li>
+			<ul class="main-menu"> 
+				@forelse($categories as $category)   
+				<li><a href="/category/article/{{$category->alias}}">{{$category->name}}</a></li>
+				@endforeach
 			</ul>
 		</div>
 	</div>
-	<div class="col-sm col-lg-4">
+	<div class="col-sm col-lg-10">
 		@yield('content') 
 	</div>
 </div>
+
 	
 @include('layouts._footer')
 
